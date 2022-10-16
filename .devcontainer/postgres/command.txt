@@ -1,0 +1,8 @@
+// DBにアクセス
+$ docker exec -it ch06-db psql -U gwp gwp
+
+// DB一覧取得
+gwp=# \l
+
+// テーブル一覧取得
+gwp=# \dt

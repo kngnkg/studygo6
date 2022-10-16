@@ -4,8 +4,29 @@ services:
     container_name: ch06-app
     build:
       context: .
-      dockerfile: ./.devcontainer/Dockerfile 
+      dockerfile: ./.devcontainer/go/Dockerfile 
     tty: true
     command: /bin/bash
     volumes:
       - .:/go/src/app
+
+  db:
+    container_name: ch06-db
+    build:
+      context: .
+      dockerfile: ./.devcontainer/postgres/Dockerfile
+    # restart: unless-stopped
+    volumes:
+      - type: volume
+        source: postgres-data
+        target: /var/lib/postgresql/data
+      - type: bind
+        source: ./.devcontainer/postgres/init.sql
+        target: /docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_USER: gwp
+      POSTGRES_PASSWORD: gwp
+      POSTGRES_DB: gwp
+
+volumes:
+  postgres-data:
