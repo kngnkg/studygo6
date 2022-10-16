@@ -9,4 +9,3 @@ services:
     command: /bin/bash
     volumes:
       - .:/go/src/app
-  
