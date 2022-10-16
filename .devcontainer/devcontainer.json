@@ -37,6 +37,8 @@
     },
     "extensions": [
 		"golang.go",
-		"oderwat.indent-rainbow"
+		"oderwat.indent-rainbow",
+		"ms-azuretools.vscode-docker",
+		"eamodio.gitlens"
 	]
   }
