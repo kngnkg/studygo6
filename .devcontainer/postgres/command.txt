@@ -1,4 +1,5 @@
-// DBにアクセス
+// postgresにアクセス
+// DBには繋がらないので、\cで繋ぐ
 $ docker exec -it ch06-db psql -U gwp gwp
 
 // DB一覧取得
@@ -6,3 +7,9 @@ gwp=# \l
 
 // テーブル一覧取得
 gwp=# \dt
+
+// DB接続切り替え
+gwp# \c [DB名]
+
+// 現在接続中のDB表示
+gwp# select current_database();

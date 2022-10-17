@@ -1,0 +1,12 @@
+// pingを入れる
+$ apt-get install iputils-ping net-tools
+
+// DBコンテナへの接続確認
+$ ping -c 3 ch06-db
+
+
+Exception has occurred: panic
+"dial tcp 127.0.0.1:5432: connect: connection refused"
+Stack:
+	2  0x00000000002ae988 in main.init.0
+	    at /go/src/app/store.go:28

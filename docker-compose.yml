@@ -24,9 +24,9 @@ services:
         source: ./.devcontainer/postgres/init.sql
         target: /docker-entrypoint-initdb.d/init.sql
     environment:
-      POSTGRES_USER: gwp
-      POSTGRES_PASSWORD: gwp
-      POSTGRES_DB: gwp
+      - POSTGRES_USER=gwp
+      - POSTGRES_PASSWORD=gwp
+      - POSTGRES_DB=gwp
 
 volumes:
   postgres-data:
