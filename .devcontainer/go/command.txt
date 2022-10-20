@@ -1,0 +1,6 @@
+// pingを入れる
+$ apt-get install iputils-ping net-tools
+
+// DBコンテナへの接続確認
+$ ping -c 3 ch06-db
+
