@@ -1,4 +1,4 @@
-drop table posts cascade if exists;
+drop table if exists posts;
 
 create table posts (
     id      serial primary key,
